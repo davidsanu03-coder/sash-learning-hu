@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.tsx";
-import axios from "axios";
+import api from "../api";
 import { User, Mail, Lock, ArrowRight, Loader2 } from "lucide-react";
 
 // ✅ Backend URL (Render)
