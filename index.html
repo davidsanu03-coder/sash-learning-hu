@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SASH-LEARNING-HUB</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Defensive fix for global fetch property error in some environments
+      try {
+        if (window.fetch && Object.getOwnPropertyDescriptor(window, 'fetch')?.get && !Object.getOwnPropertyDescriptor(window, 'fetch')?.set) {
+          const originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            writable: true,
+            value: originalFetch
+          });
+        }
+      } catch (e) {
+        console.warn("Could not patch fetch property", e);
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
