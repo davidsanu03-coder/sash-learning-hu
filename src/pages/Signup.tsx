@@ -26,7 +26,7 @@ export default function Signup() {
     setError("");
 
     try {
-      const { data } = await axios.post(
+      const { data } = await api.post(
         `${API_URL}/api/auth/register`,
         {
           fullName,
